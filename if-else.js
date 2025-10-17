@@ -128,7 +128,7 @@ const prompt = require('prompt-sync')();
         }
 //=================================================================
 
-// // // Question 5 - Traffic Light System
+//Question 5 - Traffic Light System
     console.log("Question 5 - Traffic Light System");
     // User Input Light Color
         let color = prompt("What's the traffic light color? - ");
@@ -304,3 +304,4 @@ console.log("Question 10 - Credit Score Rating");
     }
 
 //==========================================================================
+
