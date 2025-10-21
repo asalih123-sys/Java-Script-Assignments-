@@ -21,7 +21,7 @@ const prompt = require('prompt-sync')();
                     // Nested if - 2
                         if(credit > 650)
                         {
-                            console.log(" Congratulations- You are Approved for the Loan! \n");
+                            console.log(" Congratulations - You are Approved for the Loan! \n");
 
                         }
                             else
@@ -186,13 +186,13 @@ const prompt = require('prompt-sync')();
             if(systemCheck == "Y")
             {
                 let paymentM = prompt("What's your payment method - (Ex. Credit Card or Paypal): ");
-                    if(paymentM == "Credit Card" || "credit card")
+                    if(paymentM == "Credit Card" ||  paymentM == "credit card")
                     {
                         let cardV = prompt("System: Is the Card Verified? - (Y/N): ");
                             if(cardV == "Y")
                             {
                                 let shipAdd = prompt("Are you shipping Domestically or Internationally?: ");
-                                    if(shipAdd == "domestic" || "Domestic")
+                                    if(shipAdd == "domestic" || shipAdd == "Domestic")
                                     {
                                         console.log("Your Final Price is $32.68");
                                         console.log("Thank you for Ordering with US! \n");
@@ -225,7 +225,7 @@ const prompt = require('prompt-sync')();
                             if(payPal == "Y")
                             {
                                 let shipAdd = prompt("Are you shipping Domestically or Internationally?: ");
-                                    if(shipAdd == "domestic" || "Domestic")
+                                    if(shipAdd == "domestic" || shipAdd == "Domestic")
                                     {
                                         console.log("Your Final Price is $32.68 \n");
                                         console.log("Thank you for Ordering with US! \n");
@@ -310,8 +310,32 @@ const prompt = require('prompt-sync')();
 	console.log("Question 6 - Insurance Premium Calculator \n");
 	console.log("Your Base Premium is $1000, based on your answers it will go UP or DOWN.");
 	// User Input
-	let ageI = parseInt(prompt("How old are you?: "));
-		if(age < 25)
+	let age12 = parseInt(prompt("How old are you?: "));
+		
+	if(age > 25)
+	{
+		let yoE = parseInt(prompt("How many years of Experience do you have?: "));
+			if(yoE > 5)
+			{
+				let hadAccidents2 = prompt("Have you had a accident before? - (Y/N): ");
+					if(hadAccidents2 == "Y")
+					{
+						console.log("Your premium cost is $1000. \n");
+					}
+
+					else
+					{
+						console.log("Your premium cost is $850. \n");
+					}
+			}
+
+			else
+			{
+				console.log("Your premium cost is $1200. \n");
+			}
+	}
+
+    else if(age12 > 16)
 		{
 			let hadAccidents = prompt("Have you had a accident before? - (Y/N):  ");
 				if(hadAccidents == "Y")
@@ -334,26 +358,1114 @@ const prompt = require('prompt-sync')();
 				}
 		}
 
-	else
-	{
-		let yoE = parseInt(prompt("How many years of Experience do you have?: "));
-			if(yoE > 5)
-			{
-				let hadAccidents2 = prompt("Have you had a accident before? - (Y/N): ");
-					if(hadAccidents2 == "Y")
-					{
-						console.log("Your premium cost is $1000. \n");
-					}
-
-					else
-					{
-						console.log("Your premium cost is $850. \n");
-					}
-			}
-
-			else
-			{
-				console.log("Your premium cost is $1200. \n");
-			}
-	}
+        else
+        {
+            console.log("Your too young buddy!");
+        }
 //============================================================================================================
+
+// Question 7 - Restaurant Bill Calculator
+    console.log("Question 7 - Resturant Bill Calculator");
+    // User Input / Base Bill Amount
+    let tbill = parseInt(prompt("What is the intital bill?: "));
+    let rcD = tbill * 0.1;
+    // Conditonal Statement
+        if(tbill > 50)
+        {
+             let aPeople = parseInt(prompt("How many people are at your table?: "));
+                if(aPeople > 6)
+                {
+                    // Automatic 1.18 Mutipler to bill
+                    let m1 = tbill * 1.18;
+                        let rewardC3 = prompt("Do you have rewards card with us? - (Y/N): ")
+                                    if(rewardC3 == "Y")
+                                    {
+                                        let tbill5 = (m1 - rcD);
+                                        console.log("Your final bill is $" + tbill5 + "\n");
+                                    }
+
+                                    else
+                                    {
+                                        console.log("Your final bill is $" + m1 + "\n");
+                                    }
+                        
+                }
+                
+                else
+                {
+                    let tipC = parseInt(prompt("Choose your tip amount: 15%, 18%, and 20%. Enter in Number Format: " ));
+                        if(tipC == 15)
+                        {
+                            // Mutiply 1.15 to total bill
+                            let m2 = tbill * 1.15;
+                                let rewardC2 = prompt("Do you have rewards card with us? - (Y/N): ")
+                                    if(rewardC2 == "Y")
+                                    {
+                                        let tbill3 = (m2 - rcD);
+                                        console.log("Your final bill is $" + tbill3 + "\n");
+                                    }
+
+                                    else
+                                    {
+                                        console.log("Your final bill is $" + m2 + "\n");
+                                    }
+
+                        }
+
+                        else if(tipC == 18)
+                        {
+                            // Mutiply 1.18 to total bill
+                            let m3 = tbill * 1.18;
+                                let rewardC3 = prompt("Do you have rewards card with us? - (Y/N): ")
+                                    if(rewardC3 == "Y")
+                                    {
+                                         let tbill4 = (m3 - rcD);
+                                        console.log("Your final bill is $" + tbill4 + "\n");
+                                    }
+
+                                    else
+                                    {
+                                        console.log("Your final bill is $" + m3 + "\n");
+                                    }
+                        }
+
+                        else
+                        {
+                            // Mutiply 1.20 to total bill
+                            let m4 = tbill * 1.20;
+                                let rewardC4 = prompt("Do you have rewards card with us? - (Y/N): ")
+                                    if(rewardC4 == "Y")
+                                    {
+                                         let tbill5 = (m4 - rcD);
+                                        console.log("Your final bill is $" + tbill5 + "\n");
+                                    }
+
+                                    else
+                                    {
+                                        console.log("Your final bill is $" + m4 + "\n");
+                                    }
+                        }
+                }
+        }
+
+        else
+        {
+            let tipc = parseInt(prompt("Enter a tip amount, I would recomment 15%. : "));
+                if(tipc != 0)
+                {
+                    let rewardC = prompt("Do you have a rewards card with us? - (Y/N): ");
+                        if(rewardC == "Y")
+                        {
+                            // 10 % discount from total bill
+                             let tBill1 = ((tipc / 100) + 1) * (tbill - rcD); 
+                            console.log("Your final bill is $" + tBill1 + "\n");
+                        }
+
+                        else
+                        {
+                            let tBill2 = ((tipc / 100) + 1) * tbill;
+                            console.log("Your final bill is $" + tBill2 + "\n");
+                        }
+                }
+
+                else
+                {
+                    console.log("Invalid TIP \n");
+                }
+
+        }
+//==================================================================================================================
+
+// Question 8 - Job Application Filter
+    console.log("Question 8 - Job Application Filter");
+    // User Input Required Degree
+    let rDegree = prompt("System: Does Applicant Have Required Degree? - (Y/N): ");
+    // Conditonal
+        if(rDegree == "Y")
+        {
+            let yoE2 = parseInt(prompt("How many years of experience do you have?: "));
+                if(yoE2 > 2)
+                {
+                    let certifications = prompt("Do you have your certifications? - (Y/N): ");
+                        if(certifications == "Y")
+                        {
+                            console.log("System: Strong candidate!");
+                                let wtL = prompt("Are you willing to relocate? - (Y/N): ");
+                                    if(wtL == "Y")
+                                    {
+                                       console.log("System: ⚠️ Priority Applicant! \n");
+                                    }
+
+                                    else
+                                    {
+                                        console.log("System: Strong Applicant! \n");
+                                    }
+                        }
+
+                        else 
+                        {
+                            if(yoE2 > 5)
+                            {
+                                console.log("System: Qualified Candidate!");
+                                     let wtL2 = prompt("Are you willing to relocate? - (Y/N): ");
+                                    if(wtL2 == "Y")
+                                    {
+                                       console.log("System: ⚠️ Priority Applicant! \n");
+                                    }
+
+                                    else
+                                    {
+                                        console.log("System: Strong Applicant! \n");
+                                    }
+                            }
+
+                            else
+                            {
+                                console.log("System: Normal Candidate! \n");
+                            }
+                        }
+                }  
+                else
+                {
+                    console.log("System: Avaliable for Entry-level Consideration! \n");
+                }
+            }
+
+            else
+            {
+                console.log("System: Applicant is not Qualified! \n");
+
+            }
+//=======================================================================================================================
+
+// Question 9 - Gym Membership Pricing
+    console.log("Question 9 - Gym Membership Pricing \n");
+    console.log("The Base Membership Price is $50 a Month!");
+    // User Input Membership Type
+    let msP = prompt("What is your Membership Type? (Basic, Premium, and VIP): ");
+        if(msP == "basic" ||  msP == "Basic")
+        {
+            let basicB = 50;
+                let ageStudent = parseInt(prompt("How old are you?: "));
+                    if(ageStudent < 25)
+                    {
+                        let studentD = (50 - (50*0.2));
+                            let annualC = prompt("Have you signed up for the annual contract? - (Y/N): ");
+                                if(annualC == "Y")
+                                {
+                                        console.log("Your total bill amount is $" + studentD + " a month and 400 a Year, which includes 2 months free!\n");
+                                }
+                                else
+                                {
+                                        console.log("Your total bill amount is $" + studentD + " a month and 480 a Year!\n");
+                                }
+                    }
+
+                    else
+                    {
+                        let annualC = prompt("Have you signed up for the annual contract? - (Y/N): ");
+                                    if(annualC == "Y")
+                                    {
+                                         console.log("Your total bill amount is $" + basicB + "  a month and 500 a Year, and 2 months free!! \n");
+                                    }
+
+                                    else
+                                    {
+                                         console.log("Your total bill amount is $" + basicB + " a month and 600 a Year! \n");
+                                    }
+                    }
+        }
+
+        else if(msP == "premium" ||  msP == "Premium")
+        {
+            let premiumB = 80;
+            console.log("Extra $30 Dollars a Month Includes Group Classes");
+                let ageStudent = parseInt(prompt("How old are you?: "));
+                        if(ageStudent < 25)
+                        {
+                            let studentD1 = (80- (80*0.2));
+                                let annualC = prompt("Have you signed up for the annual contract? - (Y/N): ");
+                                    if(annualC == "Y")
+                                    {
+                                        console.log("Your total bill amount is $" + studentD1 + " a month and 768 a Year, which includes a free gym bag, and 2 months free! \n");
+                                    }
+
+                                    else
+                                    {
+                                         console.log("Your total bill amount is $" + studentD1 + " a month and 800 a Year, Which Includes a Free Gym Bag! \n");
+                                    }
+                        }
+
+                        else
+                        {
+                            let annualC = prompt("Have you signed up for the annual contract? - (Y/N): ");
+                                    if(annualC == "Y")
+                                    {
+                                         console.log("Your total bill amount is $" + premiumB + "  a month and 800 a Year, which includes a free gym bag, and 2 months free!! \n");
+                                    }
+
+                                    else
+                                    {
+                                         console.log("Your total bill amount is $" + premiumB + " a month and 960 a Year, Which Includes a Free Gym Bag! \n");
+                                    }
+                        }
+        }
+
+        else if(msP == "vip" || msP ==  "Vip" || msP == "VIP")
+        {
+            let vipB = 120;
+            console.log("Extra $70 includes group training, and personal trainer!");
+                let ageStudent = parseInt(prompt("How old are you?: "));
+                        if(ageStudent < 25)
+                        {
+                            let studentD2 = (120 - (120*0.2));
+                                let annualC = prompt("Have you signed up for the annual contract? - (Y/N): ");
+                                    if(annualC == "Y")
+                                    {
+                                         console.log("Your total bill amount is $" + studentD2 + "  a month and 900 a Year, which includes a free gym bag, and 2 months free!! \n");
+                                    }
+
+                                    else
+                                    {
+                                         console.log("Your total bill amount is $" + studentD2 + " a month and 1080 a Year, Which Includes a Free Gym Bag! \n");
+                                    }
+                        }
+
+                        else
+                        {
+                            let annualC = prompt("Have you signed up for the annual contract? - (Y/N): ");
+                                    if(annualC == "Y")
+                                    {
+                                         console.log("Your total bill amount is $" + vipB + "  a month and 1200 a Year, which includes a free gym bag, and 2 months free!! \n");
+                                    }
+
+                                    else
+                                    {
+                                         console.log("Your total bill amount is $" + vipB + " a month and 1440 a Year, Which Includes a Free Gym Bag! \n");
+                                    }
+                        }
+        }
+
+        else
+        {
+            console.log("Error: Invalid Option! \n");
+        }
+//===================================================================================================================
+
+// Question 10 - Hotel Room Pricing System 
+    console.log("Question 10 - Hotel Room Pricing System");
+    // First Introduction and Room Type Input
+        console.log("Welcome to our Hotel, the base Price is $100 a Night! \n");
+            // Input
+                let rType = prompt("What is your room type? (Standard, Deluxe, or Suite): ");
+                    // Conditonal
+                    if(rType == "Standard" || rType == "standard")
+                    {
+                        let season = prompt("System: What season is it? (Peak, Regular, or Off-Peak): ");
+                            if(season == "Peak" || season == "peak")
+                            {
+                                // 50% increase on Room
+                                    let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $127.5 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $127.5 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $113 \n");
+                                                }
+                                                
+                                                else
+                                                {
+                                                    console.log("Your total price is $127.5 \n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $113.5 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $113.5 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $101.7 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $113.5 \n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $150 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $150 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $135 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total pice is $150 \n");
+                                                }
+                                        }
+                            }
+
+                            else if(season == "Regular" || season == "regular")
+                            {
+                                 let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $85 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $85 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $76.5 \n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("Your total price is $85 \n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $75 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $75 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $67.5 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $75 \n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $100 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $100 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $90 \n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("Your total price is $100 \n");
+                                                }
+                                        }
+                            }
+
+                            else if(season == "Off-Peak" || season == "offpeak" || season == "off-peak" || season == "Off-peak" || season == "off-Peak")
+                            {
+                                // 20% Discount
+                                 let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $68 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $68 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $61.2 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $68 \n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $54 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $80 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $80 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $72 \n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("Your total price is $80 \n");
+                                                }
+                                        }
+                            }
+                    }
+
+                    else if(rType == "deluxe" || rType == "Deluxe")
+                    {
+                         let season = prompt("System: What season is it? (Peak, Regular, or Off-Peak): ");
+                            if(season == "Peak" || season == "peak")
+                            {
+                                // 50% increase on Room
+                                    let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $127.5 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $127.5 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $113 \n");
+                                                }
+                                                
+                                                else
+                                                {
+                                                    console.log("Your total price is $127.5 \n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $113.5 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $113.5 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $101.7 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $113.5 \n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $150 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $150 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $135 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total pice is $150 \n");
+                                                }
+                                        }
+                            }
+
+                            else if(season == "Regular" || season == "regular")
+                            {
+                                 let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $85 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $85 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $76.5 \n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("Your total price is $85 \n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $75 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $75 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $67.5 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $75 \n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $100 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $100 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $90 \n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("Your total price is $100 \n");
+                                                }
+                                        }
+                            }
+
+                            else if(season == "Off-Peak" || season == "offpeak" || season == "off-peak" || season == "Off-peak" || season == "off-Peak")
+                            {
+                                // 20% Discount
+                                 let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $68 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $68 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $61.2 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $68 \n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $54 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $80 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $80 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $72 \n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("Your total price is $80 \n");
+                                                }
+                                        }
+                            }
+                    }
+
+                    else if(rType == "suite" || "Suite")
+                    {
+                         let season = prompt("System: What season is it? (Peak, Regular, or Off-Peak): ");
+                            if(season == "Peak" || season == "peak")
+                            {
+                                let cost1 = 250;
+                                // 50% increase on Room
+                                let cost150 = cost1 * 1.50;
+                                    let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $" + (cost150*0.85) + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $"+(cost150 * 0.85) + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $" +((cost150*0.85)*0.9) + "\n");
+                                                }
+                                                
+                                                else
+                                                {
+                                                    console.log("Your total price is $"+(cost150 * 0.85) + "\n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $"+(cost150 * 0.75) + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $"+(cost150 * 0.75) + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $101.7 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $" +((cost150*0.75)*0.9) + "\n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $" + cost150 + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $" + cost150 + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $" + (cost150*0.9) + "\n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $" + cost150 + "\n");
+                                                }
+                                        }
+                            }
+
+                            else if(season == "Regular" || season == "regular")
+                            {
+                                let cost2 = 250;
+                                 let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            let cost25 = cost2 * 0.85;
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $" + cost25 + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    cconsole.log("Your total price is $" + cost25 + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $" + (cost25*0.9) + "\n");
+                                                }
+                                                else
+                                                {
+                                                        console.log("Your total price is $" + cost25 + "\n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            let cost256 = cost2 * 0.75; 
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $" + cost256 + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $" + cost256 + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $" + (cost256*0.9) + "\n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $" + cost2 + "\n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    cconsole.log("Your total price is $" + cost2 + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $" + cost2 + "\n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $" + (cost2*0.9) + "\n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("Your total price is $" + cost2 + "\n");
+                                                }
+                                        }
+                            }
+
+                            else if(season == "Off-Peak" || season == "offpeak" || season == "off-peak" || season == "Off-peak" || season == "off-Peak")
+                            {
+                                // 20% Discount
+                                 let loS = parseInt(prompt("How long is your Stay?: "));
+                                        if(loS > 7)
+                                        {
+                                            // 15 % Discount on Total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $68 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $68 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $61.2 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $68 \n");
+                                                }
+                                        }
+
+                                        else if(loS > 14)
+                                        {
+                                            // 25% discount on total
+                                             let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $54 \n");
+                                                }
+
+                                                else
+                                                {
+                                                    console.log("Your total price is $60 \n");
+                                                }
+
+                                        }
+
+                                        else
+                                        {
+                                            let loyaltyS = prompt("Are you a loyalty member? (No, Silver, Gold, Platinum): ");
+                                                if(loyaltyS == "Silver" || loyaltyS == "silver")
+                                                {
+                                                    console.log("Since you are a Silver Member you recieve Free Breakfast - ($20 value per night)!");
+                                                    console.log("Your total price is $80 \n");
+                                                }
+
+                                                else if(loyaltyS == "Gold" || loyaltyS == "gold")
+                                                {
+                                                    console.log("Since you are a gold Member you recieve Free breakfast + room upgrade to next tier!");
+                                                    console.log("Your total price is $80 \n");
+                                                }
+
+                                                else if(loyaltyS == "Platinum" || loyaltyS == "platinum")
+                                                {
+                                                    console.log("Since you are a Platinum Member you recieve Free breakfast + free parking + 10% additonal discount!");
+                                                    console.log("Your total price is $72 \n");
+                                                }
+                                                else
+                                                {
+                                                    console.log("Your total price is $80 \n");
+                                                }
+                                        }
+                            }
+                    }
+
+                    else
+                    {
+                        console.log("Invalid Entry!");
+                    }
