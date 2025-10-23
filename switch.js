@@ -47,15 +47,30 @@ console.log("The Price of your coffee is: $" + price + "\n");
                     console.log("The Season" + month + " belongs to is Winter! \n");
                     break;
                 
-                case "march" || "March" || "April" || "april" || "may" || "May":
+                case "march":
+                case "March":
+                case "April": 
+                case "april": 
+                case "may":
+                case "May":
                     console.log("The Season " + month + " belongs to is Spring! \n");
                     break;
 
-                case "june" || "June" || "July" || "july" || "August" || "august":
+                case "june":
+                case "June":
+                case "July":
+                case "july":
+                case "August": 
+                case "august":
                     console.log("The Season" + month + " belongs to is Summer! \n");
                     break;
 
-                case "september" || "September" || "october" || "October" || "november" || "November":
+                case "september":
+                case "September":
+                case "october": 
+                case "October": 
+                case "november":
+                case "November":
                     console.log("The Season" + month + " belongs to is Fall! \n");
                     break;
                 
@@ -63,4 +78,7 @@ console.log("The Price of your coffee is: $" + price + "\n");
                     console.log("Invalid Answer \n");
                     break;
         }
+
         //=======================================================================================
+
+        // Question 3 - 
